@@ -24,19 +24,19 @@ void Player::move()
 	}
 
 	// ジャンプ
-	if (m_y == GROUND_Y && KeyUp.down())
+	if (KeyUp.down())
 	{
 		// 押している時間計測開始
 		m_push_time.restart();
 	}
-	if (m_y == GROUND_Y && KeyUp.up())
+	if (KeyUp.up())
 	{
 		m_jump_power = std::clamp(m_push_time.sF() * 110, 20.0, 110.0);
-
+		m_jumped_y = m_y;
 		m_stopwatch.restart();
 	}
 
-	m_y = GROUND_Y - m_jump_power * m_stopwatch.sF() * 10 + GRAVITY_CONST * m_stopwatch.sF() * m_stopwatch.sF() * 0.5 * 100;
+	m_y = m_jumped_y - m_jump_power * m_stopwatch.sF() * 10 + GRAVITY_CONST * m_stopwatch.sF() * m_stopwatch.sF() * 0.5 * 100;
 	
 	m_x = std::clamp(m_x, 0.0, static_cast<double>(WIDTH_X));
 	m_y = std::clamp(m_y, 0.0, static_cast<double>(GROUND_Y));

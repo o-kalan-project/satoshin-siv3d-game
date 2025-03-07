@@ -18,7 +18,7 @@ private:
 	std::vector<DrawableText> m_comment;									// コメントのデータ
 	String m_name;															// コメントの名前
 	RectF m_comment_rect;													// コメントの画像
-	const JSON m_json = JSON::Load(U"resources/engine/danmaku_data.json");	// コメントのデータ
+	const JSON m_json = JSON::Load(U"resources/danmaku_data.json");			// コメントのデータ
 	const Font m_font{ FontMethod::SDF, 30, Typeface::Black };				// コメントのフォント
 
 public:

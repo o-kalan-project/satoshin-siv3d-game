@@ -321,8 +321,8 @@
     <None Include="resources\engine\texture\box-shadow\8.png">
       <Filter>Resource Files\resources\engine\texture\box-shadow</Filter>
     </None>
-    <None Include="resources\engine\danmaku_data.json">
-      <Filter>Resource Files\resources\engine</Filter>
+    <None Include="resources\danmaku_data.json">
+      <Filter>Resource Files\resources</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
