@@ -11,7 +11,7 @@ void Main()
 	Game game;
 	int game_state = STAGE_ONE_SCREEN;
 
-	game.init();
+	game.init(U"gochiusa");
 
     while (System::Update())
     { 

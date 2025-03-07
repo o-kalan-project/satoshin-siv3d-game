@@ -9,7 +9,7 @@ void Danmaku::init(const String name)
 	m_name = name;						// 使いたいコメントの名前を設定
 	m_num_data = m_json[name].size();	// コメントのデータの数を取得
 	m_index = Random(m_num_data - 1);	// コメントのデータのインデックスをランダムに設定
-	m_y = Random(GROUND_Y);				// コメントのy座標をランダムに設定
+	m_y = Random(static_cast<double>(CEILING_Y), static_cast<double>(GROUND_Y));				// コメントのy座標をランダムに設定
 
 	for (int i = 0; i < m_num_data; ++i)
 	{
@@ -32,7 +32,7 @@ void Danmaku::draw()
 		m_index = Random(m_num_data - 1);
 
 		// ランダムなy座標に再配置
-		m_y = Random(static_cast<double>(GROUND_Y));
+		m_y = Random(static_cast<double>(CEILING_Y), static_cast<double>(GROUND_Y));
 
 		// x座標を初期化
 		m_x = WIDTH_X;

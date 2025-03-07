@@ -11,7 +11,7 @@ class Danmaku
 {
 private:
 	double m_x = WIDTH_X;													// コメントのx座標
-	double m_y = Random(GROUND_Y);											// コメントのy座標
+	double m_y = Random(static_cast<double>(CEILING_Y), static_cast<double>(GROUND_Y));											// コメントのy座標
 	double m_speed = 500 / 60.0;											// コメントのスピード
 	int m_index = 0;														// コメントのデータのインデックス;
 	int m_num_data;															// コメントのデータの数

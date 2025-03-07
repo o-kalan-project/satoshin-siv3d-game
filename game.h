@@ -12,17 +12,17 @@ class Game
 {
 private:
 	Player m_player;
-	Danmaku m_danmaku[5];
+	Danmaku m_danmaku[MAX_COMMENT_NUM];
 	const Font m_font{ 30, Typeface::Bold };
 	Bullet m_bullet;
 
 	/// <summary>
 	/// 地面の表示
 	/// </summary>
-	void drawGround();
+	void drawGroundAndCeiling();
 
 public:
-	void init();
+	void init(const String name);
 
 	/// <summary>
 	/// 第一ステージ
