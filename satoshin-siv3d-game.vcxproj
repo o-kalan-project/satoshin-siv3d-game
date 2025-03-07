@@ -79,6 +79,7 @@
     <LibraryPath>$(SIV3D_0_6_15_WEB)\lib\freetype;$(SIV3D_0_6_15_WEB)\lib\giflib;$(SIV3D_0_6_15_WEB)\lib\harfbuzz;$(SIV3D_0_6_15_WEB)\lib\opencv;$(SIV3D_0_6_15_WEB)\lib\turbojpeg;$(SIV3D_0_6_15_WEB)\lib\webp;$(SIV3D_0_6_15_WEB)\lib\opus;$(SIV3D_0_6_15_WEB)\lib\tiff;$(SIV3D_0_6_15_WEB)\lib\png;$(SIV3D_0_6_15_WEB)\lib\zlib;$(SIV3D_0_6_15_WEB)\lib\SDL2;$(SIV3D_0_6_15_WEB)\lib</LibraryPath>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="bullet.cpp" />
     <ClCompile Include="danmaku.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -179,6 +180,7 @@
     <None Include="Templates\Embeddable\web-player.js" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bullet.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="danmaku.h" />
     <ClInclude Include="game.h" />

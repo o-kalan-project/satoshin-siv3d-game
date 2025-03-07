@@ -6,12 +6,15 @@
 #include "core.h"
 #include "player.h"
 #include "danmaku.h"
+#include "bullet.h"
 
 class Game
 {
 private:
 	Player m_player;
 	Danmaku m_danmaku[5];
+	const Font m_font{ 30, Typeface::Bold };
+	Bullet m_bullet;
 
 	/// <summary>
 	/// ’n–Ê‚Ì•\Ž¦

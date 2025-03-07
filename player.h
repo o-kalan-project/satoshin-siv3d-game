@@ -13,10 +13,14 @@ private:
 	double m_jumped_y = GROUND_Y;
 	double m_speed = 3;
 	double m_jump_power = 50;
+	const double m_radius = 10;
 	Stopwatch m_stopwatch{ StartImmediately::No };
 	Stopwatch m_push_time{ StartImmediately::No };
 
 public:
+	double x;
+	double y;
+
 	/// <summary>
 	/// êŠ‚Ìİ’è
 	/// </summary>

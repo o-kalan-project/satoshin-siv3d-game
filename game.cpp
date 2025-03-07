@@ -21,11 +21,16 @@ int Game::stageOneScreen()
 {
 	drawGround();
 
+	m_font(Format(Profiler::FPS())).draw(WIDTH_X - 100, WIDTH_Y - 100, Palette::White);
+
 	// コメントの描画
 	for (int i = 0; i < 5; ++i)
 	{
 		m_danmaku[i].draw();
 	}
+
+	// 弾の描画
+	m_bullet.draw(m_player);
 
 	// プレイヤーの移動
 	m_player.move();
