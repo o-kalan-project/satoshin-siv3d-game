@@ -9,18 +9,19 @@ void Main()
     Scene::SetBackground(ColorF{ 0.8, 0.9, 1.0 });
 
 	Game game;
-	int game_state = STAGE_ONE_SCREEN;
+	int game_state = TITLE_SCREEN;
 
-	game.init(U"gochiusa");
+	game.init(U"other");
 
     while (System::Update())
     { 
         switch (game_state)
         {
+		case TITLE_SCREEN:
+			game_state = game.titleScreen();
+			break;
         case STAGE_ONE_SCREEN:
 			game_state = game.stageOneScreen();
-            break;
-        default:
             break;
         }
     }

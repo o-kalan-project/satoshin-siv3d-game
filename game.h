@@ -13,7 +13,7 @@ class Game
 private:
 	Player m_player;
 	Danmaku m_danmaku[MAX_COMMENT_NUM];
-	const Font m_font{ 30, Typeface::Bold };
+	const Font m_font{ FontMethod::SDF, 30, Typeface::Bold };
 	Bullet m_bullet;
 
 	/// <summary>
@@ -22,7 +22,13 @@ private:
 	void drawGroundAndCeiling();
 
 public:
+	/// <summary>
+	/// 初期化
+	/// </summary>
+	/// <param name="name">コメントの名前</param>
 	void init(const String name);
+
+	int titleScreen();
 
 	/// <summary>
 	/// 第一ステージ
