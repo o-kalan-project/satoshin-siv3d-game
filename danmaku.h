@@ -6,6 +6,7 @@
 #include <Siv3D.hpp>
 
 #include "core.h"
+#include "player.h"
 
 class Danmaku
 {
@@ -20,6 +21,9 @@ private:
 	RectF m_comment_rect;													// コメントの画像
 	const JSON m_json = JSON::Load(U"resources/danmaku_data.json");			// コメントのデータ
 	const Font m_font{ FontMethod::SDF, 30, Typeface::Black };				// コメントのフォント
+	ColorF m_color = Palette::White;										// コメントの色
+
+	ColorF setColor(const int color) const;
 
 public:
 	/// <summary>
@@ -32,6 +36,13 @@ public:
 	///	描画
 	/// </summary>
 	void draw();
+
+	/// <summary>
+	/// コメントと自機の当たり判定
+	/// </summary>
+	/// <param name="player">自機</param>
+	/// <returns>当たったらtrue，そうでなければfalse</returns>
+	bool isHit(const Player player) const;
 };
 
 #endif // !DANMAKU_H_

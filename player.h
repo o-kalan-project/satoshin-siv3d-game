@@ -11,7 +11,8 @@ private:
 	double m_x = 100;
 	double m_y = GROUND_Y;
 	double m_jumped_y = GROUND_Y;
-	double m_speed = 3;
+	const double m_speed = 3;
+	double m_raw_speed;
 	double m_jump_power = 50;
 	const double m_radius = 10;
 	Stopwatch m_stopwatch{ StartImmediately::No };

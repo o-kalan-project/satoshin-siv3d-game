@@ -4,7 +4,7 @@
 
 void Bullet::draw(const Player player)
 {
-	if (KeyZ.down())
+	if (KeyZ.pressed() && m_stopwatch == 0)
 	{
 		m_x[m_index] = player.x;
 		m_y[m_index] = player.y;
@@ -21,4 +21,6 @@ void Bullet::draw(const Player player)
 			m_x[i] += m_speed;
 		}
 	}
+
+	m_stopwatch = (m_stopwatch + 1) % 10;
 }

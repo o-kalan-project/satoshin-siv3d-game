@@ -12,6 +12,7 @@ private:
 	int m_index = 0;
 	const double m_radius = 5;
 	const double m_speed = 3;
+	int m_stopwatch = 0;
 	std::vector<double> m_x = std::vector<double>(100, -m_radius);
 	std::vector<double> m_y = std::vector<double>(100, 0);
 

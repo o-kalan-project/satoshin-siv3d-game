@@ -54,6 +54,12 @@ int Game::stageOneScreen()
 	for (int i = 0; i < MAX_COMMENT_NUM; ++i)
 	{
 		m_danmaku[i].draw();
+
+		if (m_danmaku[i].isHit(m_player))
+		{
+			init(U"other");
+			return TITLE_SCREEN;
+		}
 	}
 
 	return STAGE_ONE_SCREEN;

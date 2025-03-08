@@ -20,6 +20,8 @@ void Main()
 		case TITLE_SCREEN:
 			game_state = game.titleScreen();
 			break;
+
+        // ステージ１（ごちうさ）
         case STAGE_ONE_SCREEN:
 			game_state = game.stageOneScreen();
             break;
