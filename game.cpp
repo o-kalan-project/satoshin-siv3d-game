@@ -5,10 +5,13 @@
 
 void Game::init(const String name)
 {
+	// プレイヤーの初期化
+	m_player.setPos(100, WIDTH_Y_HALF);
+
 	// コメントの初期化
-	for (int i = 0; i < MAX_COMMENT_NUM; ++i)
+	for (Danmaku& danmaku : m_danmaku)
 	{
-		m_danmaku[i].init(name);
+		danmaku.init(name);
 	}
 }
 
@@ -23,9 +26,9 @@ int Game::titleScreen()
 	drawGroundAndCeiling();
 
 	// コメントの描画
-	for (int i = 0; i < MAX_COMMENT_NUM; ++i)
+	for (Danmaku& danmaku : m_danmaku)
 	{
-		m_danmaku[i].draw();
+		danmaku.draw();
 	}
 
 	m_font(U"Press Space Key to Start").drawAt(TextStyle::Outline(0.3, Palette::Red), WIDTH_X_HALF, WIDTH_Y_HALF, Palette::White);
@@ -51,11 +54,11 @@ int Game::stageOneScreen()
 	m_player.move();
 
 	// コメントの描画
-	for (int i = 0; i < MAX_COMMENT_NUM; ++i)
+	for (Danmaku& danmaku : m_danmaku)
 	{
-		m_danmaku[i].draw();
+		danmaku.draw();
 
-		if (m_danmaku[i].isHit(m_player))
+		if (danmaku.isHit(m_player))
 		{
 			init(U"other");
 			return TITLE_SCREEN;

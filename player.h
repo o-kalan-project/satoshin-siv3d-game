@@ -9,7 +9,7 @@ class Player
 {
 private:
 	double m_x = 100;
-	double m_y = GROUND_Y;
+	double m_y = WIDTH_Y_HALF;
 	double m_jumped_y = GROUND_Y;
 	const double m_speed = 3;
 	double m_raw_speed;
